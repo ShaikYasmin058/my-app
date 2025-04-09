@@ -10,7 +10,9 @@ import SignUp from "./SignUp";
 import DonationPage from "./DonationPage";
 import AdminDashboard from "./AdminDashboard";
 import AddCampaign from "./AddCampaign";
-import LearnMore from "./LearnMore"; // ✅ Import LearnMore Component
+import LearnMore from "./LearnMore"; 
+
+import logo from "./assets/logo.jpeg"; // ✅ Corrected image import
 
 const Button = ({ children, className, onClick }) => (
   <button className={`button ${className}`} onClick={onClick}>
@@ -26,14 +28,22 @@ const Home = () => {
       {/* 🔹 Navbar */}
       <nav className="navbar">
         <div className="logo-container">
-          <img src="/logo.jpeg" alt="Helping Hands Logo" className="logo-image" />
+          <img src={logo} alt="Helping Hands Logo" className="logo-image" />
           <h2 className="logo-text">Crowdfunding</h2>
         </div>
         <div className="nav-links">
-          <Button className="nav-button" onClick={() => navigate("/about")}>About Us</Button>
-          <Button className="nav-button" onClick={() => navigate("/contact")}>Contact Us</Button>
-          <Button className="nav-button" onClick={() => navigate("/signin")}>Sign In</Button>
-          <Button className="nav-button" onClick={() => navigate("/signup")}>Sign Up</Button>
+          <Button className="nav-button" onClick={() => navigate("/about")}>
+            About Us
+          </Button>
+          <Button className="nav-button" onClick={() => navigate("/contact")}>
+            Contact Us
+          </Button>
+          <Button className="nav-button" onClick={() => navigate("/signin")}>
+            Sign In
+          </Button>
+          <Button className="nav-button" onClick={() => navigate("/signup")}>
+            Sign Up
+          </Button>
         </div>
       </nav>
 
@@ -44,8 +54,12 @@ const Home = () => {
           Your donation helps us make a difference in the community. Join us in making a change.
         </p>
         <div className="hero-buttons">
-          <Button className="donate-button" onClick={() => navigate("/campaign")}>🎯 View Campaigns</Button>
-          <Button className="create-campaign-button" onClick={() => navigate("/add-campaign")}>🚀 Create Campaign</Button>
+          <Button className="donate-button" onClick={() => navigate("/campaign")}>
+            🎯 View Campaigns
+          </Button>
+          <Button className="create-campaign-button" onClick={() => navigate("/add-campaign")}>
+            🚀 Create Campaign
+          </Button>
         </div>
       </section>
     </div>
@@ -73,7 +87,7 @@ const App = () => {
           <Route path="/donate/:id" element={<DonationPage />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
           <Route path="/add-campaign" element={<AddCampaign />} />
-          <Route path="/learn-more" element={<LearnMore />} /> {/* ✅ Added LearnMore Route */}
+          <Route path="/learn-more" element={<LearnMore />} />
         </Routes>
         <Footer />
       </div>

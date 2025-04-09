@@ -1,59 +1,36 @@
 import React from "react";
-import { useLocation, useNavigate } from "react-router-dom";
-import "./Campaign.css";
-
-const DonatePage = () => {
-  const location = useLocation();
-  const campaign = location.state || { title: "Unknown Campaign" }; // 🛠 Fallback data
-  const navigate = useNavigate();
-
-  return (
-    <div className="donate-container">
-      <h1>Donate to: {campaign.title}</h1>
-      <p>Your contribution helps make a difference!</p>
-      <button className="donate-confirm-button" onClick={() => alert("Donation Successful!")}>
-        ✅ Confirm Donation
-      </button>
-      <button className="back-button" onClick={() => navigate(-1)}>🔙 Back</button>
-    </div>
-  );
-};
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./About";
 import LearnMore from "./LearnMore";
 import DonatePage from "./DonatePage";
+import SignIn from "./SignIn";
+import SignUp from "./SignUp";
+import AdminDashboard from "./AdminDashboard";
+
+
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<About />} />
-        <Route path="/learn-more" element={<LearnMore />} />  {/* Make sure this is correct */}
+        {/* Authentication Routes */}
+        <Route path="/" element={<SignIn />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+
+        {/* Admin Dashboard */}
+        <Route path="/admin-dashboard" element={<AdminDashboard />} />
+
+        {/* Other Pages */}
+        <Route path="/about" element={<About />} />
+        <Route path="/learn-more" element={<LearnMore />} />
         <Route path="/donate" element={<DonatePage />} />
+        <Route path="/add-campaign" element={<h2>Add Campaign Page (Coming Soon)</h2>} />
+        <Route path="/campaign" element={<h2>View Campaign Page (Coming Soon)</h2>} />
+
       </Routes>
     </Router>
   );
 }
 
 export default App;
-
-
-

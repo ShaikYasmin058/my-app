@@ -7,13 +7,21 @@ const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Mock authentication (replace with actual API call)
-    if (email === "admin@example.com" && password === "admin123") {
-      navigate("/admin-dashboard"); // Redirect to Admin Dashboard
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check if user exists
+    const validUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (validUser) {
+      alert("Sign In Successful!");
+      navigate("/admin-dashboard"); // ✅ Redirect to Admin Dashboard
     } else {
       setError("Invalid email or password");
     }
@@ -31,6 +39,7 @@ const SignIn = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
+            className="input-field"
           />
           <input
             type="password"
@@ -38,8 +47,9 @@ const SignIn = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
+            className="input-field"
           />
-          <button type="submit">Sign In</button>
+          <button type="submit" className="submit-button">Sign In</button>
         </form>
         <p>
           Don't have an account?{" "}
