@@ -19,4 +19,41 @@ const DonatePage = () => {
   );
 };
 
-export default DonatePage;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import About from "./About";
+import LearnMore from "./LearnMore";
+import DonatePage from "./DonatePage";
+
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<About />} />
+        <Route path="/learn-more" element={<LearnMore />} />  {/* Make sure this is correct */}
+        <Route path="/donate" element={<DonatePage />} />
+      </Routes>
+    </Router>
+  );
+}
+
+export default App;
+
+
+

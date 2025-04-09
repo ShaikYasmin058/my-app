@@ -1,70 +1,131 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();  
+
   return (
     <div style={{ 
       width: "100vw",
-      height: "100vh",
+      minHeight: "100vh", // ✅ Ensures proper vertical alignment
       display: "flex",
       flexDirection: "column",
       justifyContent: "center",
       alignItems: "center",
-      backgroundColor: "#f4f4f4",
+      backgroundColor: "#f8f9fa",
       fontFamily: "'Poppins', sans-serif",
-      padding: "20px",
+      padding: "30px 20px",
       boxSizing: "border-box",
+      textAlign: "center",
     }}>
-      <h1 style={{ 
-        color: "#2c3e50", 
-        fontSize: "40px", 
-        marginBottom: "20px",
-        textTransform: "uppercase",
-      }}>
-        About Crowdfunding
-      </h1>
       
-      {/* Crowdfunding Image with Full Width Styling */}
+      {/* 🌟 About Heading */}
+      <h1 style={{ 
+        color: "#6A0572", 
+        fontSize: "36px",
+        marginBottom: "15px",
+        textTransform: "uppercase",
+        fontWeight: "bold",
+        letterSpacing: "1px"
+      }}>
+        About Us
+      </h1>
+
+      <p style={{
+        fontSize: "17px",
+        color: "#444",
+        marginBottom: "20px",
+        width: "75%",
+        lineHeight: "1.6",
+      }}>
+        We believe in the power of crowdfunding to bring dreams to life. 
+        Our platform connects visionaries with supporters, 
+        making it easier to raise funds and turn ideas into reality.
+      </p>
+
+      {/* 🌍 About Us Image */}
       <div style={{
         width: "80%",
+        maxWidth: "750px",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
+        marginBottom: "25px",
       }}>
         <img 
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJX-3CKT66F6BlgY1zPKlF1wi_KiPmuMm_cAyuy19xI1Zwj0VK7mrVoFKCZjmWZrZKiw&usqp=CAU"
-          alt="Crowdfunding"
+          src="https://files.oaiusercontent.com/file-STpX3dAzWeXNCakhz6Hzz9?se=2025-02-24T16%3A27%3A53Z&sp=r&sv=2024-08-04&sr=b&rscc=max-age%3D604800%2C%20immutable%2C%20private&rscd=attachment%3B%20filename%3D48152c73-3f7d-487c-bbbf-5f22e17c6352.webp&sig=13uZTrppVeUUYyQHg6cccUFZm3H7esltcciOuQ9ZTxk%3D"
+          alt="Crowdfunding Support"
           style={{ 
             width: "100%", 
-            height: "400px",
-            objectFit: "cover",
-            borderRadius: "15px", 
-            border: "5px solid #8b689e",
-            boxShadow: "0px 5px 15px rgba(0, 0, 0, 0.3)"
+            maxHeight: "300px",
+            borderRadius: "12px", 
+            border: "4px solid #6A0572",
+            boxShadow: "0px 4px 12px rgba(0, 0, 0, 0.2)"
           }}
         />
       </div>
 
-      {/* Description Section */}
+      {/* 📝 More Information Section */}
       <p style={{ 
-        width: "80%",
-        marginTop: "20px",
-        fontSize: "20px", 
-        lineHeight: "1.8", 
+        width: "75%",
+        fontSize: "17px", 
+        lineHeight: "1.6", 
         color: "#333",
-        padding: "30px",
-        backgroundColor: "white",
-        borderRadius: "15px",
         textAlign: "justify",
-        boxShadow: "0px 4px 15px rgba(0, 0, 0, 0.2)",
+        padding: "20px",
+        backgroundColor: "white",
+        borderRadius: "10px",
+        boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.15)",
       }}>
-        Crowdfunding is a modern fundraising method where individuals, startups, and organizations 
-        raise small contributions from a large number of people through online platforms. This innovative 
-        approach enables creative projects, social causes, and businesses to receive financial 
-        support directly from a community of backers. It empowers individuals to bring their 
-        ideas to life while allowing supporters to make a real impact on projects they believe in.
+        Our mission is to empower individuals, entrepreneurs, and social initiatives by providing a seamless crowdfunding platform. 
+        Whether you're looking to launch a new business, support a charitable cause, or bring a creative idea to life, 
+        we make fundraising easy, transparent, and accessible to everyone.
+        <br /><br />
+        <strong>Why Choose Us?</strong><br />
+        ✅ <strong>Secure and Trusted Platform</strong> - Built with transparency and reliability.<br />
+        ✅ <strong>Multiple Crowdfunding Options</strong> - Reward-based, equity, donation, and debt models.<br />
+        ✅ <strong>Global Reach</strong> - Connect with supporters worldwide.<br />
+        ✅ <strong>Easy-to-Use Tools</strong> - User-friendly interface and analytics.
       </p>
+
+      {/* 🎓 Learn More Button */}
+      <button 
+        onClick={() => navigate("/learn-more")} 
+        style={{
+          marginTop: "20px",
+          padding: "12px 24px",
+          backgroundColor: "#6A0572",
+          color: "white",
+          border: "none",
+          borderRadius: "10px",
+          fontSize: "16px",
+          fontWeight: "bold",
+          cursor: "pointer",
+          boxShadow: "0px 3px 8px rgba(0, 0, 0, 0.2)",
+          transition: "0.3s ease-in-out",
+        }}>
+        📖 Learn More
+      </button>
     </div>
   );
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export default About;

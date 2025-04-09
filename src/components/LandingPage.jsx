@@ -1,26 +1,26 @@
-import React from 'react';
-import './LandingPage.css'; // For adding styles (optional)
+import React from "react";
+import { Link } from "react-router-dom";
 
-const LandingPage = () => {
+const LearnMore = () => {
   return (
-    <div className="landing-page">
-      <header className="landing-header">
-        <h1>Welcome to Our Website!</h1>
-        <p>Your journey starts here.</p>
-        <button>Get Started</button>
-      </header>
-      <section className="landing-info">
-        <h2>About Us</h2>
-        <p>
-          We are a company dedicated to providing the best services for our
-          clients. Explore our platform to know more.
-        </p>
-      </section>
-      <footer className="landing-footer">
-        <p>© 2025 Our Company</p>
-      </footer>
+    <div style={{ padding: "20px", textAlign: "center" }}>
+      <h1>More About Crowdfunding</h1>
+      <p>Crowdfunding allows people to bring ideas to life with community support. It helps startups, charities, and projects gain funds.</p>
+      
+      {/* Back Button */}
+      <Link to="/" style={{
+        display: "inline-block",
+        marginTop: "20px",
+        padding: "10px 20px",
+        backgroundColor: "#3498db",
+        color: "white",
+        borderRadius: "10px",
+        textDecoration: "none"
+      }}>
+        🔙 Back to Home
+      </Link>
     </div>
   );
-}
+};
 
-export default LandingPage;
+export default LearnMore;

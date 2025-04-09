@@ -9,9 +9,9 @@ import SignIn from "./SignIn";
 import SignUp from "./SignUp";
 import DonationPage from "./DonationPage";
 import AdminDashboard from "./AdminDashboard";
-import AddCampaign from "./AddCampaign"; // ✅ Import AddCampaign
+import AddCampaign from "./AddCampaign";
+import LearnMore from "./LearnMore"; // ✅ Import LearnMore Component
 
-// 🌟 Reusable Modern Button Component
 const Button = ({ children, className, onClick }) => (
   <button className={`button ${className}`} onClick={onClick}>
     {children}
@@ -26,8 +26,7 @@ const Home = () => {
       {/* 🔹 Navbar */}
       <nav className="navbar">
         <div className="logo-container">
-        <img src="/logo.jpeg" alt="Helping Hands Logo" className="logo-image" />
-
+          <img src="/logo.jpeg" alt="Helping Hands Logo" className="logo-image" />
           <h2 className="logo-text">Crowdfunding</h2>
         </div>
         <div className="nav-links">
@@ -73,7 +72,8 @@ const App = () => {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/donate/:id" element={<DonationPage />} />
           <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          <Route path="/add-campaign" element={<AddCampaign />} /> {/* ✅ Added AddCampaign Route */}
+          <Route path="/add-campaign" element={<AddCampaign />} />
+          <Route path="/learn-more" element={<LearnMore />} /> {/* ✅ Added LearnMore Route */}
         </Routes>
         <Footer />
       </div>
@@ -82,11 +82,3 @@ const App = () => {
 };
 
 export default App;
-
-
-
-
-
-
-
-
