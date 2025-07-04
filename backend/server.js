@@ -4,24 +4,19 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 
+// Load environment variables
 dotenv.config();
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(bodyParser.json());
 
-// MongoDB Connection
-mongoose
-  .connect("mongodb://127.0.0.1:27017/crowdfundingDB", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+// ✅ Clean MongoDB Connection (no deprecated options)
+mongoose.connect("mongodb://127.0.0.1:27017/crowdfundingDB")
   .then(() => console.log("✅ MongoDB connected"))
   .catch((err) => console.error("❌ MongoDB connection error:", err));
-
-mongoose.connection.on("error", (err) => {
-  console.error("❌ MongoDB Connection Error:", err);
-});
 
 // Routes
 const authRoutes = require("./routes/authRoutes");
@@ -32,7 +27,7 @@ app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/donations", donationRoutes);
 
-// Root Test Route
+// Root Route
 app.get("/", (req, res) => {
   res.send("🌐 Welcome to the Crowdfunding API!");
 });

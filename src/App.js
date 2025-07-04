@@ -1,3 +1,4 @@
+
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import About from "./About";
@@ -5,7 +6,9 @@ import LearnMore from "./LearnMore";
 import DonatePage from "./DonatePage";
 import SignIn from "./SignIn";
 import SignUp from "./SignUp";
-import AdminDashboard from "./AdminDashboard";
+
+
+import AdminDashboard from "./pages/AdminDashboard";
 
 
 

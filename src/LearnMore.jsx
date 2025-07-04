@@ -61,5 +61,16 @@ const LearnMore = () => {
     </div>
   );
 };
+import React from "react";
+
+
+  <div>
+    <h2>Learn More Page</h2>
+    <p>This page is now successfully loaded</p>
+  </div>
+
 
 export default LearnMore;
+
+
+

@@ -1,27 +1,29 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "./Campaign.css"; 
+import "./Campaign.css";
+
+import ab from "./assets/ab.jpeg";
+import na from "./assets/na.jpeg";
+import hands1 from "./assets/hands1.jpeg";
 
 const campaigns = [
   {
     id: 1,
     title: "Help Children Get Education",
     description: "Support underprivileged children by providing books and school supplies.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQefjRYuzAshUls8iNYMms1x5ZL6F2N0uci6g&s",
-    
-    
+    image: ab,
   },
   {
     id: 2,
     title: "Save The Rainforest",
     description: "Donate to plant trees and protect wildlife in the Amazon rainforest.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXXgqD9_nYHd4tm1qMv7fx9PJLsVndTo0yIg&s",
+    image: na,
   },
   {
     id: 3,
     title: "Clean Water Initiative",
     description: "Provide clean drinking water to communities in need.",
-    image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShL0cCGJPaf_33d_2dl6OsOhP7zlZ5v7Jr0g&s",
+    image: hands1,
   },
 ];
 

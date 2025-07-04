@@ -36,6 +36,7 @@ const LearnMore = () => {
         backgroundColor: "white",
         borderRadius: "10px",
         boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.2)",
+        
       }}>
         Crowdfunding is an innovative fundraising approach that allows individuals, businesses, and organizations 
         to collect funds from a large group of supporters, typically through online platforms. There are four primary 

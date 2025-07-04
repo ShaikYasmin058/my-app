@@ -1,0 +1,21 @@
+.admin-dashboard {
+  padding: 2rem;
+  font-family: Arial, sans-serif;
+}
+
+.donation-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.donation-table th,
+.donation-table td {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.donation-table th {
+  background-color: #f4f4f4;
+}

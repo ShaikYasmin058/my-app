@@ -1,98 +1,70 @@
+// import React from "react";
+// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+// import Home from "./pages/Home";
+
+
+
+// const App = () => {
+//   return (
+//     <Router>
+//       <Routes>
+//         <Route path="/" element={<Home />} />
+//         {/* Add more routes here */}
+//       </Routes>
+//     </Router>
+//   );
+// };
+
+
+// export default App;
+
+
+
 import React from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home.jsx";
+import About from "./pages/About.jsx";
+import Contact from "./pages/Contact.jsx";
+import SignIn from "./pages/SignIn.jsx";
+import SignUp from "./pages/SignUp.jsx";
+import LearnMore from "./pages/LearnMore.jsx";
+import DonationPage from "./pages/DonationPage.jsx";
+import AdminDashboard from "./pages/AdminDashboard.jsx";
 
-import Campaign from "./campaign";
-import About from "./About";
-import Contact from "./Contact";
-import SignIn from "./SignIn";
-import SignUp from "./SignUp";
-import DonationPage from "./DonationPage";
-import AdminDashboard from "./AdminDashboard";
-import AddCampaign from "./AddCampaign";
-import LearnMore from "./LearnMore"; 
+import EducationPage from "./pages/EducationPage.jsx";
 
-import logo from "./assets/logo.jpeg"; // ✅ Corrected image import
 
-const Button = ({ children, className, onClick }) => (
-  <button className={`button ${className}`} onClick={onClick}>
-    {children}
-  </button>
-);
 
-const Home = () => {
-  const navigate = useNavigate();
 
-  return (
-    <div className="app-container">
-      {/* 🔹 Navbar */}
-      <nav className="navbar">
-        <div className="logo-container">
-          <img src={logo} alt="Helping Hands Logo" className="logo-image" />
-          <h2 className="logo-text">Crowdfunding</h2>
-        </div>
-        <div className="nav-links">
-          <Button className="nav-button" onClick={() => navigate("/about")}>
-            About Us
-          </Button>
-          <Button className="nav-button" onClick={() => navigate("/contact")}>
-            Contact Us
-          </Button>
-          <Button className="nav-button" onClick={() => navigate("/signin")}>
-            Sign In
-          </Button>
-          <Button className="nav-button" onClick={() => navigate("/signup")}>
-            Sign Up
-          </Button>
-        </div>
-      </nav>
 
-      {/* 🎯 Hero Section */}
-      <section className="hero">
-        <h1 className="hero-title">Support Our Cause</h1>
-        <p className="hero-text">
-          Your donation helps us make a difference in the community. Join us in making a change.
-        </p>
-        <div className="hero-buttons">
-          <Button className="donate-button" onClick={() => navigate("/campaign")}>
-            🎯 View Campaigns
-          </Button>
-          <Button className="create-campaign-button" onClick={() => navigate("/add-campaign")}>
-            🚀 Create Campaign
-          </Button>
-        </div>
-      </section>
-    </div>
-  );
-};
-
-// 🌍 Footer Component
-const Footer = () => (
-  <footer className="footer">
-    <p>&copy; {new Date().getFullYear()} Crowdfunding Platform. All rights reserved.</p>
-  </footer>
-);
-
-const App = () => {
+function App() {
   return (
     <Router>
-      <div className="app-wrapper">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/campaign" element={<Campaign />} />
-          <Route path="/signin" element={<SignIn />} />
-          <Route path="/signup" element={<SignUp />} />
-          <Route path="/donate/:id" element={<DonationPage />} />
-          <Route path="/admin-dashboard" element={<AdminDashboard />} />
-          <Route path="/add-campaign" element={<AddCampaign />} />
-          <Route path="/learn-more" element={<LearnMore />} />
-        </Routes>
-        <Footer />
-      </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
+        <Route path="/learn-more" element={<LearnMore />} />
+        <Route path="/donate" element={<DonationPage />} />
+         <Route path="/admin-dashboard" element={<AdminDashboard />} />
+        <Route path="/education" element={<EducationPage />} />
+
+
+        
+        
+
+        
+      </Routes>
     </Router>
   );
-};
+}
+
+
+
+
 
 export default App;
+
+
